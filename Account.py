@@ -2,7 +2,7 @@
 class Account:
 
     def __init__(self, number, holder, balance, limit = 1000):
-        print("Construindo objeto ... {}".format(self))
+        print("Building object ... {}".format(self))
         self.__number = number
         self.__holder = holder
         self.__balance = balance
@@ -16,3 +16,7 @@ class Account:
 
     def withdraw(self, value):
         self.__balance -= value
+
+    def transfer(self, value, destiny):
+        self.withdraw(value)
+        destiny.deposit(value)
